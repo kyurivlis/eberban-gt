@@ -11,7 +11,13 @@ Class {
 EbGrammarExamples >> eberban [
 	<gtExample>
 	i := 'Eberban'.
-	self parse: i rule: #sentence.
+	self parse: i rule: #compound.
+]
+
+{ #category : #accessing }
+EbGrammarExamples >> mian [
+	<gtExample>
+	self parse: 'mian' rule: #word
 ]
 
 { #category : #accessing }
