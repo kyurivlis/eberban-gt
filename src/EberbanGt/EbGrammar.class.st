@@ -8,10 +8,23 @@ Class {
 		'consonant',
 		'surd',
 		'letter',
-		'vowel'
+		'vowel',
+		'word',
+		'compound',
+		'compoundPrefix'
 	],
 	#category : #EberbanGt
 }
+
+{ #category : #accessing }
+EbGrammar >> compound [
+	^(compoundPrefix ==> [:nodes| nodes ]), letter star end
+]
+
+{ #category : #accessing }
+EbGrammar >> compoundPrefix [
+	^'e' asPParser
+]
 
 { #category : #accessing }
 EbGrammar >> consonant [
@@ -25,17 +38,17 @@ EbGrammar >> letter [
 
 { #category : #accessing }
 EbGrammar >> sonorant [
-	^'nrl' asPPChoice
+	^'nrl' asPPchoice
 ]
 
 { #category : #accessing }
 EbGrammar >> start [
-	^letter
+	^word
 ]
 
 { #category : #accessing }
 EbGrammar >> surd [
-	^'mpbfvtdszcjgk' asPPChoice
+	^'mpbfvtdszcjgk' asPPchoice
 ]
 
 { #category : #accessing }
@@ -50,7 +63,7 @@ EbGrammar >> vhowel [
 
 { #category : #accessing }
 EbGrammar >> vowel [
-	^'ieaou' asPPChoice
+	^'ieaou' asPPchoice
 ]
 
 { #category : #accessing }

@@ -1,11 +1,11 @@
 Extension { #name : #String }
 
 { #category : #'*EberbanGt' }
-String >> asPPChoice [
-	^ self asPParsers fold: [:p1 :p2 | p1 / p2]
+String >> asPParsers [
+	^ self deepCollect: [:x | x asPParser]
 ]
 
 { #category : #'*EberbanGt' }
-String >> asPParsers [
-	^ self deepCollect: [:x | x asPParser]
+String >> asPPchoice [
+	^ self asPParsers fold: [:p1 :p2 | p1 / p2]
 ]
