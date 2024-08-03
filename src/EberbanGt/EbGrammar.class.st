@@ -38,7 +38,7 @@ EbGrammar >> letter [
 
 { #category : #accessing }
 EbGrammar >> sonorant [
-	^'nrl' asPPchoice
+	^EbMorphology new sonorants asPPchoice
 ]
 
 { #category : #accessing }
@@ -48,7 +48,7 @@ EbGrammar >> start [
 
 { #category : #accessing }
 EbGrammar >> surd [
-	^'mpbfvtdszcjgk' asPPchoice
+	^EbMorphology new surds asPPchoice
 ]
 
 { #category : #accessing }
@@ -63,7 +63,7 @@ EbGrammar >> vhowel [
 
 { #category : #accessing }
 EbGrammar >> vowel [
-	^'ieaou' asPPchoice
+	^EbMorphology new vowels asPPchoice
 ]
 
 { #category : #accessing }

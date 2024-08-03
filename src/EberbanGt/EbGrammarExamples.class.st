@@ -2,7 +2,8 @@ Class {
 	#name : #EbGrammarExamples,
 	#superclass : #PP2CompositeNodeExamples,
 	#instVars : [
-		'i'
+		'i',
+		'p'
 	],
 	#category : #EberbanGt
 }
@@ -18,6 +19,15 @@ EbGrammarExamples >> eberban [
 EbGrammarExamples >> mian [
 	<gtExample>
 	self parse: 'mian' rule: #word
+]
+
+{ #category : #accessing }
+EbGrammarExamples >> mianmiunmeon [
+	<gtExample>
+	i:='mianmiunmeon'.
+	p:= self parse: i rule: #sentence.
+	self assert: p words size equals: 3.
+	self assert: p 
 ]
 
 { #category : #accessing }
