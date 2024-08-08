@@ -6,3 +6,8 @@ Class {
 	#superclass : #Object,
 	#category : #EberbanGt
 }
+
+{ #category : #accessing }
+Eb >> dict [
+	^EbDictionary
+]

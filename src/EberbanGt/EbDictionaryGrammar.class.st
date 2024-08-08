@@ -26,7 +26,7 @@ EbDictionaryGrammar >> argType [
 
 { #category : #accessing }
 EbDictionaryGrammar >> argument [
-	^ $[ asPParser, argName, $: asPParser, argType, $] asPParser
+	^ $[ asPParser, argName , ($: asPParser, argType) optional, $] asPParser
 ]
 
 { #category : #accessing }
@@ -41,7 +41,7 @@ EbDictionaryGrammar >> literal [
 
 { #category : #accessing }
 EbDictionaryGrammar >> separator [
-	^ #space asPParser / #newline asPParser
+	^ #any asPParser
 ]
 
 { #category : #accessing }

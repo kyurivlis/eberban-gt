@@ -10,7 +10,7 @@ Class {
 { #category : #example }
 EbDictionary class >> example [
 	<gtExample>
-	^self fromPath: (Path from: '/home/qeqpep/s/s/eberban-gt/eberban/dictionary/en.yaml')
+	^self fromPath: (Path from: '/home/kyurivlis/s/s/eberban-gt/eberban/dictionary/en.yaml')
 ]
 
 { #category : #'instace creation' }
@@ -53,9 +53,10 @@ EbDictionary >> orderedDict: rawDict [
 		entry at: #word put: k.
 		aKeys do: [:ke| entry at: ke put: 
 						(v at: ke ifPresent: [:va|
-							ke = #links ifTrue: [self parseLinks: va].
+							ke = #links ifTrue: [self parseLinks: va]
+								ifFalse: [
 							ke = #gloss ifTrue: [va trimRight: [:x| x = $:]]
-							ifFalse: [va]] ifAbsent: nil)].
+							ifFalse: [va]]] ifAbsent: nil)].
 		aDict add: entry].
 	^aDict
 ]
